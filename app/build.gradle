@@ -10,6 +10,11 @@ application {
     mainClass = 'Hexlet.code.App'  // Указываем главный класс
 }
 
+// Добавил эту секцию чтобы запускать приложение с помощью задачи run
+tasks.named('run', JavaExec) {
+    standardInput = System.in
+}
+
 repositories {
     mavenCentral()
 }
