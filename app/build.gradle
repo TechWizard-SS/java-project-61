@@ -1,13 +1,15 @@
 plugins {
     id 'java'
     id 'application'  // Добавляем плагин application
+    id 'checkstyle'  // Добавил Checkstyle для статусов линтера
+    id "org.sonarqube" version "6.2.0.5505"
 }
 
-group = 'Hexlet.code'
+group = 'hexlet.code'
 version = '1.0-SNAPSHOT'
 
 application {
-    mainClass = 'Hexlet.code.App'  // Указываем главный класс
+    mainClass = 'hexlet.code.App'  // Указываем главный класс
 }
 
 // Добавил эту секцию чтобы запускать приложение с помощью задачи run
@@ -26,4 +28,19 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+checkstyle {
+    toolVersion '10.12.1'  // Версия Checkstyle
+    configFile file("config/checkstyle/checkstyle.xml")  // Конфиг
+    ignoreFailures false   // Остановка сборки при ошибках
+    showViolations true    // Показывать нарушения
+}
+
+sonar {
+    properties {
+        proper "sonar.projectKey", "TechWizard-SS_java-project-61"
+        property "sonar.organization", "techwizard-ss"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
