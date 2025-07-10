@@ -13,7 +13,7 @@ application {
 }
 
 // Добавил эту секцию чтобы запускать приложение с помощью задачи run
-tasks.named('run', JavaExec) {
+tasks.withType(JavaExec).configureEach {
     standardInput = System.in
 }
 
