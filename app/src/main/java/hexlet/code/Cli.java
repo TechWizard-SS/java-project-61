@@ -18,7 +18,7 @@ public class Cli {
         System.out.println("Hello, " + Cli.name + "!");
     }
 
-    public static String getName(){
+    public static String getName() {
         return name;
     }
 
