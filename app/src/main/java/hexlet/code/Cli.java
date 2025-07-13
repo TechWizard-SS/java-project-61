@@ -4,13 +4,11 @@ import java.util.Scanner;
 
 public class Cli {
 
-    public static String name;
-    int count;
+    private static String name;
 
-    public static String yourName() {
+    public static void yourName() {
         Scanner sc = new Scanner(System.in);
         name = sc.nextLine();
-        return name;
     }
 
     public static void greeting() {
@@ -18,6 +16,10 @@ public class Cli {
         System.out.print("May I have your name? ");
         Cli.yourName();
         System.out.println("Hello, " + Cli.name + "!");
+    }
+
+    public static String getName(){
+        return name;
     }
 
 }
