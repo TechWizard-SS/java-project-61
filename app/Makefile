@@ -1,5 +1,5 @@
 run-dist:
-ifeq ($(OS), Windows)
+ifeq ($(OS), Windows_NT)
 	@echo "Launch for Windows..."
 	.\build\install\app\bin\app.bat
 else
