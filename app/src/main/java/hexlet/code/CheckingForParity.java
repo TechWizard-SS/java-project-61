@@ -1,10 +1,10 @@
 package hexlet.code;
 
-import java.util.Random;
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class CheckingForParity {
-    private static final Random RAND = new Random();
+    private static final SecureRandom RAND = new SecureRandom();
     private static final Scanner SC = new Scanner(System.in);
 
 
