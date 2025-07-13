@@ -13,7 +13,7 @@ public class Cli {
         return name;
     }
 
-    public static void greeting(){
+    public static void greeting() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Cli.yourName();

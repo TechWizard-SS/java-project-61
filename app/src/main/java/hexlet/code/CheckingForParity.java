@@ -4,31 +4,31 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CheckingForParity {
-    private static final Random rand = new Random();
-    private static final Scanner sc = new Scanner(System.in);
+    private static final Random RAND = new Random();
+    private static final Scanner SC = new Scanner(System.in);
 
 
-    public static void game1(){
+    public static void game1() {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < 3; i++) {
-            int randomNumber = rand.nextInt(100) + 1;
+            int randomNumber = RAND.nextInt(100) + 1;
             System.out.println("Question: " + randomNumber);
 
-            String userAnswer = sc.nextLine();
+            String userAnswer = SC.nextLine();
             String correctAnswer = (randomNumber % 2 == 0) ? "yes" : "no";
 
             System.out.println("Your answer: " + userAnswer);
 
-            if(userAnswer.equals(correctAnswer)){
+            if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
-            }
-            else{
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+            } else {
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + correctAnswer + "'.");
                 System.out.println("Let's try again, " + Cli.name + "!");
                 break;
             }
 
-            if(i == 2){
+            if (i == 2) {
                 System.out.println("Congratulations, " + Cli.name);
                 break;
             }
