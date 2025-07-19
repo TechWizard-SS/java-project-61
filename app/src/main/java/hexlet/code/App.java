@@ -26,14 +26,14 @@ public class App {
                 System.out.println("Вы вышли из игры!");
                 break;
             case 1:
-                Cli.greeting();  // Приветствие
+                Cli.greeting();
                 break;
             case 2:
-                Cli.greeting();  // Приветствие
+                Cli.greeting();
                 CheckingForParity.game1();
                 break;
             case 3:
-                Cli.greeting();  // Приветствие
+                Cli.greeting();
                 Calculator.game2();
                 break;
             case 4:

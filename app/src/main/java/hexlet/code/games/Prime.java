@@ -9,7 +9,7 @@ public class Prime {
 
     public static void game5() {
         Engine.run("Answer 'yes' if given number is prime. Otherwise answer 'no'.", () -> {
-            int number = RAND.nextInt();
+            int number = RAND.nextInt(100) + 1;
 
             String question = String.valueOf(number);
             String answer = isPrime(number);
