@@ -1,8 +1,9 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.security.SecureRandom;
 import java.util.Scanner;
 
+import hexlet.code.Cli;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +34,7 @@ public class CheckingForParity {
 
             if (i == 2) {
                 System.out.println("Congratulations, " + Cli.getName());
+                break;
             }
 
         }
