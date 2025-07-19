@@ -1,41 +1,21 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import hexlet.code.Engine;
 
 import java.security.SecureRandom;
-import java.util.Scanner;
 
 public class Prime {
     private static final SecureRandom RAND = new SecureRandom();
-    private static final String DESCRIPTION = "What number is missing in the progression?";
-    private static final Logger LOG = LoggerFactory.getLogger(Prime.class);
-    private static final Scanner SC = new Scanner(System.in);
 
-    public static void game5(){
-        LOG.info("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        for (int i = 0; i < 3; i++) {
-            int num = RAND.nextInt(100);
-            LOG.info("Question " + num);
-            String correctAnswer;
-            String userAnswer = SC.nextLine();
-            correctAnswer = isPrime(num);
+    public static void game5() {
+        Engine.run("Answer 'yes' if given number is prime. Otherwise answer 'no'.", () -> {
+            int number = RAND.nextInt();
 
-            if(userAnswer.equals(correctAnswer)) {
-                LOG.info("Correct!");
-            } else {
-                LOG.info("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
-                return;
-            }
+            String question = String.valueOf(number);
+            String answer = isPrime(number);
 
-            if (i == 2) {
-                System.out.println("Congratulations, " + Cli.getName());
-                break;
-            }
-        }
-
+            return new Engine.QuestionAndAnswer(question, answer);
+        });
     }
 
     public static String isPrime(int num) {
@@ -56,5 +36,4 @@ public class Prime {
         }
         return "yes";
     }
-
 }

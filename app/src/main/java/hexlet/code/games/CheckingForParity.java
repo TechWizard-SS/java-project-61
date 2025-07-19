@@ -1,42 +1,18 @@
 package hexlet.code.games;
 
 import java.security.SecureRandom;
-import java.util.Scanner;
 
-import hexlet.code.Cli;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import hexlet.code.Engine;
 
 public class CheckingForParity {
-    private static final Logger LOG = LoggerFactory.getLogger(CheckingForParity.class);
     private static final SecureRandom RAND = new SecureRandom();
-    private static final Scanner SC = new Scanner(System.in);
 
     public static void game1() {
-        LOG.info("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        for (int i = 0; i < 3; i++) {
-            int randomNumber = RAND.nextInt(100) + 1;
-            LOG.info("Question: " + randomNumber);
-
-            String userAnswer = SC.nextLine();
-            String correctAnswer = (randomNumber % 2 == 0) ? "yes" : "no";
-
-            System.out.println("Your answer: " + userAnswer);
-
-            if (userAnswer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
-                break;
-            }
-
-            if (i == 2) {
-                System.out.println("Congratulations, " + Cli.getName());
-                break;
-            }
-
-        }
+        Engine.run("Answer 'yes' if the number is even, otherwise answer 'no'.", () -> {
+            int number = RAND.nextInt(100) + 1;
+            String question = String.valueOf(number);
+            String answer = (number % 2 == 0) ? "yes" : "no";
+            return new Engine.QuestionAndAnswer(question, answer);
+        });
     }
 }

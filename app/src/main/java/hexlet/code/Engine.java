@@ -1,27 +1,38 @@
-//package hexlet.code;
-//
-//import hexlet.code.games.Calculator;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//
-//import java.security.SecureRandom;
-//import java.util.Scanner;
-//
-//public class Engine {
-//    private static final Scanner SC = new Scanner(System.in);
-//    private static final Logger LOG = LoggerFactory.getLogger(Engine.class);
-//    private static final SecureRandom RAND = new SecureRandom();
-//
-//    public static String userAnswer;
-//    public static String correctAnswer;
-//
-//    public void sdf() {
-//        LOG.info("Answer 'yes' if the number is even, otherwise answer 'no'.");
-//
-//        for (int i = 0; i < 3; i++) {
-//
-//        }
-//
-//
-//    }
-//}
+package hexlet.code;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Scanner;
+import java.util.function.Supplier;
+
+public class Engine {
+    private static final int ROUNDS = 3;
+    private static final Logger LOG = LoggerFactory.getLogger(Engine.class);
+    private static final Scanner SCANNER = new Scanner(System.in);
+
+    public static void run(String description, Supplier<QuestionAndAnswer> qaSupplier) {
+        LOG.info(description);
+
+        for (int i = 0; i < ROUNDS; i++) {
+            QuestionAndAnswer questionAndAnswer = qaSupplier.get();
+            LOG.info("Question: {}", questionAndAnswer.question);
+
+            String userAnswer = SCANNER.nextLine();
+
+            if (userAnswer.equals(questionAndAnswer.answer)) {
+                LOG.info("Correct!");
+            } else {
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + questionAndAnswer.answer() + "'.");
+                System.out.println("Let's try again, " + Cli.getName() + "!");
+                return;
+            }
+        }
+
+        LOG.info("Congratulations, {}!", Cli.getName());
+    }
+
+    public record QuestionAndAnswer(String question, String answer) {
+    }
+}
