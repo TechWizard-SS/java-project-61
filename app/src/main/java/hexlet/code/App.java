@@ -23,7 +23,6 @@ public class App {
 
         switch (count) {
             case 0:
-                System.out.println("Вы вышли из игры!");
                 break;
             case 1:
                 Cli.greeting();
