@@ -23,7 +23,9 @@ public class Engine {
 //            if (userAnswer.equals(questionAndAnswer.answer)) {
 //                LOG.info("Correct!");
 //            } else {
-//                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + questionAndAnswer.answer() + "'.");
+//                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+//                      + questionAndAnswer.answer() + "'.");
+
 //                System.out.println("Let's try again, " + Cli.getName() + "!");
 //                return;
 //            }
@@ -33,7 +35,6 @@ public class Engine {
 //    }
 //
 //public record QuestionAndAnswer(String question, String answer) {}
-
 
 
     public static void run2(String description, String[][] questionAndAnswer) {
@@ -46,7 +47,8 @@ public class Engine {
             if (userAnswer.equals(questionAndAnswer[i][1])) {
                 LOG.info("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + questionAndAnswer[i][1] + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + questionAndAnswer[i][1] + "'.");
                 System.out.println("Let's try again, " + Cli.getName() + "!");
 
                 return;

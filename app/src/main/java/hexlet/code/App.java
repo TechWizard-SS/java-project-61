@@ -1,14 +1,22 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
+
+import hexlet.code.games.CheckingForParity;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
 public class App {
+    static final Logger LOG = LoggerFactory.getLogger(App.class);
+
     public static void main(String[] args) {
-        final Logger LOG = LoggerFactory.getLogger(App.class);
+
 
         LOG.info("""
                 Please enter the game number and press Enter.
@@ -49,6 +57,8 @@ public class App {
             case 6:
                 Cli.greeting();
                 Prime.game5();
+                break;
+            default:
                 break;
         }
 

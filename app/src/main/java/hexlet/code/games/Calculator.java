@@ -1,18 +1,16 @@
 package hexlet.code.games;
 
-import java.security.SecureRandom;
-import java.util.Scanner;
-
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.SCANNER;
+import java.security.SecureRandom;
+import java.util.Scanner;
 
 public class Calculator {
     private static final Scanner SCANNER = new Scanner(System.in);
     private static final SecureRandom RAND = new SecureRandom();
-    private static final char[] signs = {'+', '-', '*'};
+    private static final char[] SIGNS = {'+', '-', '*'};
 
-//    public static void game2() {
+    //    public static void game2() {
 //        Engine.run("What is the result of the expression?", () -> {
 //            int a = RAND.nextInt(20) + 1;
 //            int b = RAND.nextInt(20) + 1;
@@ -28,14 +26,14 @@ public class Calculator {
 //            return new Engine.QuestionAndAnswer(a + " " + sign + " " + b, String.valueOf(result));
 //        });
 //    }
-    public static void game2(){
+    public static void game2() {
         String description = "What is the result of the expression?";
         String[][] questionAndAnswer = new String[3][2];
 
         for (int i = 0; i < 3; i++) {
             int a = RAND.nextInt(20) + 1;
             int b = RAND.nextInt(20) + 1;
-            char sign = signs[RAND.nextInt(signs.length)];
+            char sign = SIGNS[RAND.nextInt(SIGNS.length)];
             int result = switch (sign) {
                 case '+' -> a + b;
                 case '-' -> a - b;
@@ -50,9 +48,6 @@ public class Calculator {
 
         Engine.run2(description, questionAndAnswer);
     }
-
-
-
 
 
 }
