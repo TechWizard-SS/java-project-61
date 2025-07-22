@@ -1,5 +1,4 @@
 plugins {
-    id 'java'
     id 'application'  // Добавляем плагин application
     id 'checkstyle'  // Добавил Checkstyle для статусов линтера
     id "org.sonarqube" version "6.2.0.5505"
@@ -28,15 +27,12 @@ java {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-
     implementation 'org.slf4j:slf4j-api:1.7.32'
     implementation 'ch.qos.logback:logback-classic:1.2.6'
 }
 
 test {
-    useJUnitPlatform()
+
 }
 
 checkstyle {
@@ -48,7 +44,7 @@ checkstyle {
 
 sonar {
     properties {
-        proper "sonar.projectKey", "TechWizard-SS_java-project-61"
+        property "sonar.projectKey", "TechWizard-SS_java-project-61"
         property "sonar.organization", "techwizard-ss"
         property "sonar.host.url", "https://sonarcloud.io"
     }

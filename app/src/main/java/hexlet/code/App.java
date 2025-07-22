@@ -1,13 +1,16 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        final Logger LOG = LoggerFactory.getLogger(App.class);
 
-        System.out.println("""
+        LOG.info("""
                 Please enter the game number and press Enter.
                 1 - Greet
                 2 - Even
@@ -18,7 +21,7 @@ public class App {
                 0 - Exit""");
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Your choice: ");
+        LOG.info("Your choice: ");
         int count = sc.nextInt();
 
         switch (count) {
