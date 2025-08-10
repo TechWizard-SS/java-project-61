@@ -30,7 +30,7 @@ public class Progression {
         String description = "What number is missing in the progression?";
         String[][] questionAndAnswer = new String[ROUNDS_COUNT][2];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
             int hiddenIndex = RAND.nextInt(MAX_STEP_VALUE);
             int step = RAND.nextInt(MAX_STEP_VALUE) + MIN_START_VALUE;
             int start = RAND.nextInt(MAX_START_VALUE) + MIN_START_VALUE;
