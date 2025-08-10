@@ -10,6 +10,9 @@ public class Calculator {
     private static final SecureRandom RAND = new SecureRandom();
     private static final char[] SIGNS = {'+', '-', '*'};
 
+    private static final int ROUNDS_COUNT = 3;
+
+
     //    public static void game2() {
 //        Engine.run("What is the result of the expression?", () -> {
 //            int a = RAND.nextInt(20) + 1;
@@ -28,20 +31,20 @@ public class Calculator {
 //    }
     public static void game2() {
         String description = "What is the result of the expression?";
-        String[][] questionAndAnswer = new String[3][2];
-
-        for (int i = 0; i < 3; i++) {
-            int a = RAND.nextInt(20) + 1;
-            int b = RAND.nextInt(20) + 1;
+        String[][] questionAndAnswer = new String[ROUNDS_COUNT][2];
+        int maxValue = 20;
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
+            int firstOperand = RAND.nextInt(maxValue) + 1;
+            int secondOperand = RAND.nextInt(maxValue) + 1;
             char sign = SIGNS[RAND.nextInt(SIGNS.length)];
             int result = switch (sign) {
-                case '+' -> a + b;
-                case '-' -> a - b;
-                case '*' -> a * b;
+                case '+' -> firstOperand + secondOperand;
+                case '-' -> firstOperand - secondOperand;
+                case '*' -> firstOperand * secondOperand;
                 default -> throw new IllegalStateException("Unexpected value: " + sign);
             };
 
-            questionAndAnswer[i][0] = a + " " + sign + " " + b;        // вопрос
+            questionAndAnswer[i][0] = firstOperand + " " + sign + " " + secondOperand;        // вопрос
             questionAndAnswer[i][1] = String.valueOf(result);        // правильный ответ
 
         }

@@ -6,6 +6,12 @@ import java.security.SecureRandom;
 
 public class Prime {
     private static final SecureRandom RAND = new SecureRandom();
+    private static final int NUMBER_ROUND = 3;
+    private static final int MAX_COUNT = 100;
+
+    private static final int PRIME_CHECK_START = 3;
+    private static final int PRIME_CHECK_STEP = 2;
+
 
 //    public static void game5() {
 //        Engine.run("Answer 'yes' if given number is prime. Otherwise answer 'no'.", () -> {
@@ -20,10 +26,10 @@ public class Prime {
 
     public static void game5() {
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] questionAndAnswer = new String[3][2];
+        String[][] questionAndAnswer = new String[NUMBER_ROUND][2];
 
-        for (int i = 0; i < 3; i++) {
-            int number = RAND.nextInt(100) + 1;
+        for (int i = 0; i < NUMBER_ROUND; i++) {
+            int number = RAND.nextInt(MAX_COUNT) + 1;
 
             String question = String.valueOf(number);
             String answer = isPrime(number);
@@ -36,6 +42,7 @@ public class Prime {
     }
 
     public static String isPrime(int num) {
+
         if (num < 2) {
             return "no";
         }
@@ -46,7 +53,7 @@ public class Prime {
             return "no";
         }
         // Проверяем только нечётные делители до √n
-        for (int i = 3; i * i <= num; i += 2) {
+        for (int i = PRIME_CHECK_START; i * i <= num; i += PRIME_CHECK_STEP) {
             if (num % i == 0) {
                 return "no";
             }

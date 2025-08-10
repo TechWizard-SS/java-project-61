@@ -7,14 +7,14 @@ import org.slf4j.LoggerFactory;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int ROUNDS = 3;
+    private static final int ROUNDS_COUNT = 3;
     private static final Logger LOG = LoggerFactory.getLogger(Engine.class);
-    public static final Scanner SCANNER = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
 
 //        public static void run(String description, Supplier<QuestionAndAnswer> qaSupplier) {
 //        LOG.info(description);
 //
-//        for (int i = 0; i < ROUNDS; i++) {
+//        for (int i = 0; i < ROUNDS_COUNT ; i++) {
 //            QuestionAndAnswer questionAndAnswer = qaSupplier.get();
 //            LOG.info("Question: {}", questionAndAnswer.question);
 //
@@ -40,7 +40,7 @@ public class Engine {
     public static void run2(String description, String[][] questionAndAnswer) {
         LOG.info(description);
 
-        for (int i = 0; i < ROUNDS; i++) {
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
             LOG.info("Question: {}", questionAndAnswer[i][0]);
             String userAnswer = SCANNER.nextLine();
 

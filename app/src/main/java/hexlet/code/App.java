@@ -1,10 +1,10 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
 import hexlet.code.games.CheckingForParity;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-import hexlet.code.games.Calculator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +13,14 @@ import java.util.Scanner;
 
 public class App {
     static final Logger LOG = LoggerFactory.getLogger(App.class);
+    private static final int GREET = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD_COUNT = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
+    private static final int EXIT = 0;
+
 
     public static void main(String[] args) {
 
@@ -29,31 +37,30 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
         LOG.info("Your choice: ");
-        int count = sc.nextInt();
 
-        switch (count) {
-            case 0:
+        switch (sc.nextInt()) {
+            case EXIT:
                 break;
-            case 1:
+            case GREET:
                 Cli.greeting();
                 break;
-            case 2:
+            case EVEN:
                 Cli.greeting();
                 CheckingForParity.game1();
                 break;
-            case 3:
+            case CALC:
                 Cli.greeting();
                 Calculator.game2();
                 break;
-            case 4:
+            case GCD_COUNT:
                 Cli.greeting();
                 GCD.game3();
                 break;
-            case 5:
+            case PROGRESSION:
                 Cli.greeting();
                 Progression.game4();
                 break;
-            case 6:
+            case PRIME:
                 Cli.greeting();
                 Prime.game5();
                 break;

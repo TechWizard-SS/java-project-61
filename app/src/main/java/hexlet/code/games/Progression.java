@@ -6,7 +6,7 @@ import java.security.SecureRandom;
 
 public class Progression {
     private static final SecureRandom RAND = new SecureRandom();
-
+    private static final int ROUNDS_COUNT = 3;
 //    public static void game4() {
 //        Engine.run("What number is missing in the progression?", () -> {
 //            int hiddenIndex = RAND.nextInt(10);
@@ -24,7 +24,9 @@ public class Progression {
 
     public static void game4() {
         String description = "What number is missing in the progression?";
-        String[][] questionAndAnswer = new String[3][2];
+        String[][] questionAndAnswer = new String[ROUNDS_COUNT][2];
+
+        int hiddenInd = 10;
 
         for (int i = 0; i < 3; i++) {
             int hiddenIndex = RAND.nextInt(10);
