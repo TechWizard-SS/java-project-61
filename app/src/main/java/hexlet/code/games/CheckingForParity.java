@@ -7,6 +7,7 @@ import java.security.SecureRandom;
 public class CheckingForParity {
     private static final SecureRandom RAND = new SecureRandom();
     private static final int ROUNDS_COUNT = 3;
+    private static final int MAX_VALUE = 100;
 //    public static void game1() {
 //        Engine.run("Answer 'yes' if the number is even, otherwise answer 'no'.", () -> {
 //            int number = RAND.nextInt(100) + 1;
@@ -21,9 +22,8 @@ public class CheckingForParity {
         String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] questionAndAnswer = new String[ROUNDS_COUNT][2];
 
-        int maxValue = 100;
         for (int i = 0; i < ROUNDS_COUNT; i++) {
-            int number = RAND.nextInt(maxValue) + 1;
+            int number = RAND.nextInt(MAX_VALUE) + 1;
             String question = String.valueOf(number);
             String answer = (number % 2 == 0) ? "yes" : "no";
 

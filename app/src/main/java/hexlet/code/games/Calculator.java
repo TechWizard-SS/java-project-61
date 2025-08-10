@@ -9,7 +9,7 @@ public class Calculator {
     private static final Scanner SCANNER = new Scanner(System.in);
     private static final SecureRandom RAND = new SecureRandom();
     private static final char[] SIGNS = {'+', '-', '*'};
-
+    private static final int MAX_VALUE = 20;
     private static final int ROUNDS_COUNT = 3;
 
 
@@ -32,10 +32,10 @@ public class Calculator {
     public static void game2() {
         String description = "What is the result of the expression?";
         String[][] questionAndAnswer = new String[ROUNDS_COUNT][2];
-        int maxValue = 20;
+
         for (int i = 0; i < ROUNDS_COUNT; i++) {
-            int firstOperand = RAND.nextInt(maxValue) + 1;
-            int secondOperand = RAND.nextInt(maxValue) + 1;
+            int firstOperand = RAND.nextInt(MAX_VALUE) + 1;
+            int secondOperand = RAND.nextInt(MAX_VALUE) + 1;
             char sign = SIGNS[RAND.nextInt(SIGNS.length)];
             int result = switch (sign) {
                 case '+' -> firstOperand + secondOperand;

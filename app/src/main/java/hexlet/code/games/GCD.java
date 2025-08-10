@@ -7,6 +7,7 @@ import java.security.SecureRandom;
 public class GCD {
     private static final SecureRandom RAND = new SecureRandom();
     private static final int ROUNDS_COUNT = 3;
+    private static final int MAX_VALUE = 100;
 
 //    public static void game3() {
 //        Engine.run("Find the greatest common divisor of given numbers.", () -> {
@@ -23,10 +24,10 @@ public class GCD {
     public static void game3() {
         String description = "Find the greatest common divisor of given numbers.";
         String[][] questionAndAnswer = new String[ROUNDS_COUNT][2];
-        int maxValue = 100;
-        for (int i = 0; i < 3; i++) {
-            int a = RAND.nextInt(maxValue) + 1;
-            int b = RAND.nextInt(maxValue) + 1;
+
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
+            int a = RAND.nextInt(MAX_VALUE) + 1;
+            int b = RAND.nextInt(MAX_VALUE) + 1;
             String question = String.valueOf(a) + " " + String.valueOf(b);
             String answer = String.valueOf(findGCD(a, b));
 
