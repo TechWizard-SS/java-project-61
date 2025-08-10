@@ -1,8 +1,7 @@
-### Hexlet tests and linter status:
+<img width="1055" height="696" alt="image" src="https://github.com/user-attachments/assets/62bbf389-dc29-4165-abf2-ba737c5fbdea" />### Hexlet tests and linter status:
 [![Actions Status](https://github.com/TechWizard-SS/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/TechWizard-SS/java-project-61/actions)
 
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/TechWizard-SS/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/TechWizard-SS/java-project-61/actions)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TechWizard-SS_java-project-61&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TechWizard-SS_java-project-61)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=TechWizard-SS_java-project-61&metric=bugs)](https://sonarcloud.io/summary/new_code?id=TechWizard-SS_java-project-61)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=TechWizard-SS_java-project-61&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=TechWizard-SS_java-project-61)
@@ -17,51 +16,68 @@
 Игра "Even"
 
 Если пользователь ответил на все вопросы правильно:
-<img width="729" height="798" alt="image" src="https://github.com/user-attachments/assets/07c003c8-8625-4367-beb6-8e3b4ca6b614" />
+<img width="1055" height="696" alt="image" src="https://github.com/user-attachments/assets/8c169a65-cf52-4c22-a551-d114a8855041" />
+
 
 Если пользователь ошибся:
-<img width="820" height="661" alt="image" src="https://github.com/user-attachments/assets/bbe2035a-89d5-4081-a4c6-be56847f6886" />
+<img width="1050" height="681" alt="image" src="https://github.com/user-attachments/assets/da1d2c69-8159-4dc5-b24b-880b51c546ac" />
+
 
 
 
 Игра "Calc"
 
 Если пользователь ответил на все вопросы правильно:
-<img width="766" height="943" alt="image" src="https://github.com/user-attachments/assets/a1cdf13a-699d-49c1-87cc-282c4b5e7604" />
+
+<img width="889" height="693" alt="image" src="https://github.com/user-attachments/assets/83184a33-1f75-4859-9143-065b1f818f3a" />
+
+
 
 Если пользователь ошибся:
-<img width="743" height="854" alt="image" src="https://github.com/user-attachments/assets/240bf7d7-2524-40cf-8fa9-09ec0185da4a" />
+
+<img width="930" height="575" alt="image" src="https://github.com/user-attachments/assets/b503414e-2f12-4673-a4ee-c2710fefc95c" />
+
+
+
 
 
 
 Игра "GCD"
 
 Если пользователь ответил на все вопросы правильно:
-<img width="753" height="950" alt="image" src="https://github.com/user-attachments/assets/7ee9b903-8efc-4b08-ad13-4fef14cf3740" />
+
+<img width="967" height="746" alt="image" src="https://github.com/user-attachments/assets/bfb51349-c453-4740-a53e-035d833f1382" />
+
 
 Если пользователь ошибся:
-<img width="730" height="822" alt="image" src="https://github.com/user-attachments/assets/7fd4f8a2-f9d2-4415-88a7-d2c040f8e72a" />
+
+<img width="963" height="686" alt="image" src="https://github.com/user-attachments/assets/a3603c64-006c-49f1-bd9f-e721a9d7ef3f" />
 
 
 
 Игра "Progression"
 
 Если пользователь ответил на все вопросы правильно:
-<img width="739" height="944" alt="image" src="https://github.com/user-attachments/assets/9ac689d9-2086-45bc-967a-cd21ecdb3aea" />
+
+<img width="936" height="751" alt="image" src="https://github.com/user-attachments/assets/bb7e1a74-e8d0-4264-8e90-0e935c94c6c0" />
+
 
 Если пользователь ошибся:
-<img width="744" height="860" alt="image" src="https://github.com/user-attachments/assets/28075466-f1cd-40c5-bd1a-a9067f68f6c6" />
 
+<img width="941" height="583" alt="image" src="https://github.com/user-attachments/assets/1bbc8ad7-d078-43e6-a29d-46a5ff595998" />
 
 
 
 
 Игра "Prime"
-Если пользователь ответил на все вопросы правильно:
-<img width="858" height="945" alt="image" src="https://github.com/user-attachments/assets/5b6d52f9-95f5-4156-be79-777043e0b33d" />
 
+Если пользователь ответил на все вопросы правильно:
+
+<img width="1102" height="743" alt="image" src="https://github.com/user-attachments/assets/c8a7360a-95df-420f-878c-b9cb5908cc59" />
 
 
 
 Если пользователь ошибся:
-<img width="836" height="959" alt="image" src="https://github.com/user-attachments/assets/cf3b7cce-bd4a-4c70-b986-0e55b9364e26" />
+
+<img width="1089" height="586" alt="image" src="https://github.com/user-attachments/assets/5b0fd115-69ab-4303-acbe-b6a5552bd561" />
+
