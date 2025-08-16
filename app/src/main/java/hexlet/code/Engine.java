@@ -10,13 +10,13 @@ public class Engine {
     public static final int ROUNDS_COUNT = 3;
     private static final Logger LOG = LoggerFactory.getLogger(Engine.class);
 
-    public static void run2(String description, String[][] questionAndAnswer, String userName,final Scanner SCANNER) {
+    public static void run2(String description, String[][] questionAndAnswer, String userName, Scanner scanner) {
         LOG.info(description);
 
 
         for (int i = 0; i < ROUNDS_COUNT; i++) {
             LOG.info("Question: {}", questionAndAnswer[i][0]);
-            String userAnswer = SCANNER.nextLine();
+            String userAnswer = scanner.nextLine();
 
             if (userAnswer.equals(questionAndAnswer[i][1])) {
                 LOG.info("Correct!");

@@ -46,32 +46,26 @@ public class App {
             case GREET:
                 Cli.greeting(sc);
                 break;
-            case EVEN: {
-
-                String userName = Cli.greeting(sc);
-                CheckingForParity.game1(sc, userName);
+            case EVEN:
+                String userName1 = Cli.greeting(sc);
+                CheckingForParity.game1(sc, userName1);
                 break;
-            }
-            case CALC: {
-                String userName = Cli.greeting(sc);
-                Calculator.game2(sc, userName);
+            case CALC:
+                String userName2 = Cli.greeting(sc);
+                Calculator.game2(sc, userName2);
                 break;
-            }
-            case GCD_COUNT: {
-                String userName = Cli.greeting(sc);
-                GCD.game3(sc, userName);
+            case GCD_COUNT:
+                String userName3 = Cli.greeting(sc);
+                GCD.game3(sc, userName3);
                 break;
-            }
-            case PROGRESSION: {
-                String userName = Cli.greeting(sc);
-                Progression.game4(sc, userName);
+            case PROGRESSION:
+                String userName4 = Cli.greeting(sc);
+                Progression.game4(sc, userName4);
                 break;
-            }
-            case PRIME: {
-                String userName = Cli.greeting(sc);
-                Prime.game5(sc, userName);
+            case PRIME:
+                String userName5 = Cli.greeting(sc);
+                Prime.game5(sc, userName5);
                 break;
-            }
             default:
                 break;
         }
