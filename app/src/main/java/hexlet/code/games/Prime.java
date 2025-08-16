@@ -1,35 +1,28 @@
 package hexlet.code.games;
 
+import hexlet.code.Cli;
 import hexlet.code.Engine;
+import hexlet.code.utils.Utils;
 
 import java.security.SecureRandom;
+import java.util.Scanner;
 
 public class Prime {
     private static final SecureRandom RAND = new SecureRandom();
-    private static final int NUMBER_ROUND = 3;
-    private static final int MAX_COUNT = 100;
+
+    private static final int MAX_VALUE = 100;
+    private static final int MIN_VALUE = 0;
 
     private static final int PRIME_CHECK_START = 3;
     private static final int PRIME_CHECK_STEP = 2;
 
 
-//    public static void game5() {
-//        Engine.run("Answer 'yes' if given number is prime. Otherwise answer 'no'.", () -> {
-//            int number = RAND.nextInt(100) + 1;
-//
-//            String question = String.valueOf(number);
-//            String answer = isPrime(number);
-//
-//            return new Engine.QuestionAndAnswer(question, answer);
-//        });
-//    }
-
-    public static void game5() {
+    public static void game5(Scanner scanner, String userName) {
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] questionAndAnswer = new String[NUMBER_ROUND][2];
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
-        for (int i = 0; i < NUMBER_ROUND; i++) {
-            int number = RAND.nextInt(MAX_COUNT) + 1;
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            int number = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
 
             String question = String.valueOf(number);
             String answer = isPrime(number);
@@ -38,7 +31,7 @@ public class Prime {
             questionAndAnswer[i][1] = answer;
         }
 
-        Engine.run2(description, questionAndAnswer);
+        Engine.run2(description, questionAndAnswer, userName, scanner);
     }
 
     public static String isPrime(int num) {

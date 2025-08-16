@@ -1,42 +1,31 @@
 package hexlet.code.games;
 
+import hexlet.code.Cli;
 import hexlet.code.Engine;
+import hexlet.code.utils.Utils;
 
 import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Calculator {
-    private static final Scanner SCANNER = new Scanner(System.in);
+
     private static final SecureRandom RAND = new SecureRandom();
     private static final char[] SIGNS = {'+', '-', '*'};
-    private static final int MAX_VALUE = 20;
-    private static final int ROUNDS_COUNT = 3;
+    private static final int MAX_VALUE = 30;
+    private static final int MIN_VALUE = 3;
 
-
-    //    public static void game2() {
-//        Engine.run("What is the result of the expression?", () -> {
-//            int a = RAND.nextInt(20) + 1;
-//            int b = RAND.nextInt(20) + 1;
-//            char sign = signs[RAND.nextInt(signs.length)];
-//
-//            int result = switch (sign) {
-//                case '+' -> a + b;
-//                case '-' -> a - b;
-//                case '*' -> a * b;
-//                default -> throw new IllegalStateException("Unexpected value: " + sign);
-//            };
-//
-//            return new Engine.QuestionAndAnswer(a + " " + sign + " " + b, String.valueOf(result));
-//        });
-//    }
-    public static void game2() {
+    public static void game2(Scanner scanner, String userName) {
         String description = "What is the result of the expression?";
-        String[][] questionAndAnswer = new String[ROUNDS_COUNT][2];
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
-        for (int i = 0; i < ROUNDS_COUNT; i++) {
-            int firstOperand = RAND.nextInt(MAX_VALUE) + 1;
-            int secondOperand = RAND.nextInt(MAX_VALUE) + 1;
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+
             char sign = SIGNS[RAND.nextInt(SIGNS.length)];
+
+            int firstOperand = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int secondOperand = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+
+
             int result = switch (sign) {
                 case '+' -> firstOperand + secondOperand;
                 case '-' -> firstOperand - secondOperand;
@@ -49,8 +38,6 @@ public class Calculator {
 
         }
 
-        Engine.run2(description, questionAndAnswer);
+        Engine.run2(description, questionAndAnswer, userName, scanner);
     }
-
-
 }

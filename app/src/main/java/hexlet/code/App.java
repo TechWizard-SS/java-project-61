@@ -37,37 +37,43 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
         LOG.info("Your choice: ");
+        int choice = sc.nextInt();
+        sc.nextLine();
 
-        switch (sc.nextInt()) {
+        switch (choice) {
             case EXIT:
                 break;
             case GREET:
-                Cli.greeting();
+                Cli.greeting(sc);
                 break;
-            case EVEN:
-                Cli.greeting();
-                CheckingForParity.game1();
+            case EVEN: {
+
+                String userName = Cli.greeting(sc);
+                CheckingForParity.game1(sc, userName);
                 break;
-            case CALC:
-                Cli.greeting();
-                Calculator.game2();
+            }
+            case CALC: {
+                String userName = Cli.greeting(sc);
+                Calculator.game2(sc, userName);
                 break;
-            case GCD_COUNT:
-                Cli.greeting();
-                GCD.game3();
+            }
+            case GCD_COUNT: {
+                String userName = Cli.greeting(sc);
+                GCD.game3(sc, userName);
                 break;
-            case PROGRESSION:
-                Cli.greeting();
-                Progression.game4();
+            }
+            case PROGRESSION: {
+                String userName = Cli.greeting(sc);
+                Progression.game4(sc, userName);
                 break;
-            case PRIME:
-                Cli.greeting();
-                Prime.game5();
+            }
+            case PRIME: {
+                String userName = Cli.greeting(sc);
+                Prime.game5(sc, userName);
                 break;
+            }
             default:
                 break;
         }
-
-
     }
 }

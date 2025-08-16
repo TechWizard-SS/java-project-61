@@ -4,22 +4,13 @@ import java.util.Scanner;
 
 public class Cli {
 
-    private static String userName;
-
-    public static void yourName() {
-        Scanner sc = new Scanner(System.in);
-        userName = sc.nextLine();
-    }
-
-    public static void greeting() {
+    public static String greeting(Scanner sc) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        Cli.yourName();
-        System.out.println("Hello, " + Cli.userName + "!");
+        String userName = sc.nextLine();  // Получаем имя прямо здесь
+        System.out.println("Hello, " + userName + "!");
+        return userName;  // Возвращаем имя для использования в других методах
     }
 
-    public static String getName() {
-        return userName;
-    }
 
 }

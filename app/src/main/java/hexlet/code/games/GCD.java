@@ -1,41 +1,34 @@
 package hexlet.code.games;
 
+import hexlet.code.Cli;
 import hexlet.code.Engine;
+import hexlet.code.utils.Utils;
 
 import java.security.SecureRandom;
+import java.util.Scanner;
 
 public class GCD {
     private static final SecureRandom RAND = new SecureRandom();
-    private static final int ROUNDS_COUNT = 3;
     private static final int MAX_VALUE = 100;
+    private static final int MIN_VALUE = 0;
 
-//    public static void game3() {
-//        Engine.run("Find the greatest common divisor of given numbers.", () -> {
-//            int a = RAND.nextInt(100) + 1;
-//            int b = RAND.nextInt(100) + 1;
-//
-//            String question = String.valueOf(a) + " " + String.valueOf(b);
-//            String answer = String.valueOf(findGCD(a, b));
-//
-//            return new Engine.QuestionAndAnswer(question, answer);
-//        });
-//    }
-
-    public static void game3() {
+    public static void game3(Scanner scanner, String userName) {
         String description = "Find the greatest common divisor of given numbers.";
-        String[][] questionAndAnswer = new String[ROUNDS_COUNT][2];
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
-        for (int i = 0; i < ROUNDS_COUNT; i++) {
-            int a = RAND.nextInt(MAX_VALUE) + 1;
-            int b = RAND.nextInt(MAX_VALUE) + 1;
-            String question = String.valueOf(a) + " " + String.valueOf(b);
-            String answer = String.valueOf(findGCD(a, b));
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+
+            int number1 = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int number2 = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+
+            String question = String.valueOf(number1) + " " + String.valueOf(number2);
+            String answer = String.valueOf(findGCD(number1, number2));
 
             questionAndAnswer[i][0] = question;
             questionAndAnswer[i][1] = answer;
         }
 
-        Engine.run2(description, questionAndAnswer);
+        Engine.run2(description, questionAndAnswer, userName, scanner);
     }
 
     private static int findGCD(int a, int b) {
