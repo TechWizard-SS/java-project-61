@@ -15,9 +15,9 @@ public class Progression {
         String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int hiddenIndex = Utils.generateNumber(MAX_STEP_VALUE);
-            int step = Utils.generateNumber(MAX_STEP_VALUE);
-            int start = Utils.generateNumber(MAX_START_VALUE);
+            int hiddenIndex = Utils.generateNumber(MAX_STEP_VALUE - 1);
+            int step = Utils.generateNumber(1, MAX_STEP_VALUE);
+            int start = Utils.generateNumber(1, MAX_START_VALUE);
 
             String[] progression = generateProgression(start, step);
             String answer = progression[hiddenIndex];
