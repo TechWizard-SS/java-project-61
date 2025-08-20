@@ -13,7 +13,7 @@ public class CheckingForParity {
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
 
-            int number = Utils.generateNumber(MAX_VALUE);
+            int number = Utils.generateNumber(MAX_VALUE - 1);
 
             String question = String.valueOf(number);
             String answer = (number % 2 == 0) ? "yes" : "no";
