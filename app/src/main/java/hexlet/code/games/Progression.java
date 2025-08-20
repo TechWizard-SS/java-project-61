@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.utils.Utils;
 
 import java.security.SecureRandom;
 import java.util.Scanner;
@@ -10,7 +11,6 @@ public class Progression {
 
     private static final int PROGRESSION_LENGTH = 10;
     private static final int MAX_STEP_VALUE = 10;
-    private static final int MIN_START_VALUE = 1;
     private static final int MAX_START_VALUE = 100;
 
 
@@ -19,9 +19,15 @@ public class Progression {
         String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int hiddenIndex = RAND.nextInt(MAX_STEP_VALUE);
-            int step = RAND.nextInt(MAX_STEP_VALUE) + MIN_START_VALUE;
-            int start = RAND.nextInt(MAX_START_VALUE) + MIN_START_VALUE;
+            //int hiddenIndex = RAND.nextInt(MAX_STEP_VALUE);
+            int hiddenIndex = Utils.generateNumber(MAX_STEP_VALUE);
+
+            //int step = RAND.nextInt(MAX_STEP_VALUE) + MIN_START_VALUE;
+            int step = Utils.generateNumber(MAX_STEP_VALUE);
+
+            //int start = RAND.nextInt(MAX_START_VALUE) + MIN_START_VALUE;
+            int start = Utils.generateNumber(MAX_START_VALUE);
+
             String[] progression = generateProgression(start, step);
             String answer = progression[hiddenIndex];
             progression[hiddenIndex] = "..";

@@ -47,27 +47,47 @@ public class App {
                 Cli.greeting(sc);
                 break;
             case EVEN:
-                String userName1 = Cli.greeting(sc);
+                System.out.println("Welcome to the Brain Games!");
+                System.out.print("May I have your name? ");
+                String userName1 = sc.nextLine();
+                System.out.println("Hello, " + userName1 + "!");
+
                 CheckingForParity.game1(sc, userName1);
                 break;
             case CALC:
-                String userName2 = Cli.greeting(sc);
+                System.out.println("Welcome to the Brain Games!");
+                System.out.print("May I have your name? ");
+                String userName2 = sc.nextLine();
+                System.out.println("Hello, " + userName2 + "!");
+
                 Calculator.game2(sc, userName2);
                 break;
             case GCD_COUNT:
-                String userName3 = Cli.greeting(sc);
+                System.out.println("Welcome to the Brain Games!");
+                System.out.print("May I have your name? ");
+                String userName3 = sc.nextLine();
+                System.out.println("Hello, " + userName3 + "!");
+
                 GCD.game3(sc, userName3);
                 break;
             case PROGRESSION:
-                String userName4 = Cli.greeting(sc);
+                System.out.println("Welcome to the Brain Games!");
+                System.out.print("May I have your name? ");
+                String userName4 = sc.nextLine();
+                System.out.println("Hello, " + userName4 + "!");
+
                 Progression.game4(sc, userName4);
                 break;
             case PRIME:
-                String userName5 = Cli.greeting(sc);
+                System.out.println("Welcome to the Brain Games!");
+                System.out.print("May I have your name? ");
+                String userName5 = sc.nextLine();
+                System.out.println("Hello, " + userName5 + "!");
+
                 Prime.game5(sc, userName5);
                 break;
             default:
-                break;
+                throw new RuntimeException("Unknown input: " + choice);
         }
     }
 }

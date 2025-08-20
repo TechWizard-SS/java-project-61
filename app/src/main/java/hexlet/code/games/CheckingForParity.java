@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class CheckingForParity {
     private static final SecureRandom RAND = new SecureRandom();
     private static final int MAX_VALUE = 100;
-    private static final int MIN_VALUE = 0;
 
     public static void game1(Scanner scanner, String userName) {
         String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
@@ -17,7 +16,7 @@ public class CheckingForParity {
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
 
-            int number = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int number = Utils.generateNumber(MAX_VALUE);
 
             String question = String.valueOf(number);
             String answer = (number % 2 == 0) ? "yes" : "no";

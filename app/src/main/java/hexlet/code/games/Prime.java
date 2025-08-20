@@ -10,7 +10,6 @@ public class Prime {
     private static final SecureRandom RAND = new SecureRandom();
 
     private static final int MAX_VALUE = 100;
-    private static final int MIN_VALUE = 0;
 
     private static final int PRIME_CHECK_START = 3;
     private static final int PRIME_CHECK_STEP = 2;
@@ -21,35 +20,35 @@ public class Prime {
         String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int number = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int number = Utils.generateNumber(MAX_VALUE);
 
             String question = String.valueOf(number);
-            String answer = isPrime(number);
+            boolean answer = isPrime(number);
 
             questionAndAnswer[i][0] = question;
-            questionAndAnswer[i][1] = answer;
+            questionAndAnswer[i][1] = answer ? "yes" : "no";
         }
 
         Engine.run2(description, questionAndAnswer, userName, scanner);
     }
 
-    public static String isPrime(int num) {
+    public static boolean isPrime(int num) {
 
         if (num < 2) {
-            return "no";
+            return false;
         }
         if (num == 2) {
-            return "yes";
+            return true;
         }
         if (num % 2 == 0) {
-            return "no";
+            return false;
         }
         // Проверяем только нечётные делители до √n
         for (int i = PRIME_CHECK_START; i * i <= num; i += PRIME_CHECK_STEP) {
             if (num % i == 0) {
-                return "no";
+                return false;
             }
         }
-        return "yes";
+        return true;
     }
 }

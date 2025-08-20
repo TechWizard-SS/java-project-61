@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class GCD {
     private static final SecureRandom RAND = new SecureRandom();
     private static final int MAX_VALUE = 100;
-    private static final int MIN_VALUE = 0;
 
     public static void game3(Scanner scanner, String userName) {
         String description = "Find the greatest common divisor of given numbers.";
@@ -17,8 +16,8 @@ public class GCD {
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
 
-            int number1 = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
-            int number2 = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int number1 = Utils.generateNumber(MAX_VALUE);
+            int number2 = Utils.generateNumber(MAX_VALUE);
 
             String question = String.valueOf(number1) + " " + String.valueOf(number2);
             String answer = String.valueOf(findGCD(number1, number2));
