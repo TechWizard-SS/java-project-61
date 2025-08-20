@@ -7,10 +7,7 @@ import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Prime {
-    private static final SecureRandom RAND = new SecureRandom();
-
     private static final int MAX_VALUE = 100;
-
     private static final int PRIME_CHECK_START = 3;
     private static final int PRIME_CHECK_STEP = 2;
 

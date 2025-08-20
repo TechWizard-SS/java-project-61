@@ -2,12 +2,9 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.utils.Utils;
-
-import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class CheckingForParity {
-    private static final SecureRandom RAND = new SecureRandom();
     private static final int MAX_VALUE = 100;
 
     public static void game1(Scanner scanner, String userName) {

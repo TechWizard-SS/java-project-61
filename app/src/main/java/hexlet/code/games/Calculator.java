@@ -18,7 +18,7 @@ public class Calculator {
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
 
-            char sign = SIGNS[Utils.generateNumber(SIGNS.length)];
+            char sign = SIGNS[Utils.generateNumber(SIGNS.length - 1)];
 
             int firstOperand = Utils.generateNumber(MAX_VALUE);
             int secondOperand = Utils.generateNumber(MAX_VALUE);
