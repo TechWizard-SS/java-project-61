@@ -13,21 +13,6 @@ public class Engine {
     public static void run2(String description, String[][] questionAndAnswer, String userName, Scanner scanner) {
         LOG.info(description);
 
-
-//        for (int i = 0; i < ROUNDS_COUNT; i++) {
-//            LOG.info("Question: {}", questionAndAnswer[i][0]);
-//            String userAnswer = scanner.nextLine();
-//
-//            if (userAnswer.equals(questionAndAnswer[i][1])) {
-//                LOG.info("Correct!");
-//            } else {
-//                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-//                        + questionAndAnswer[i][1] + "'.");
-//                System.out.println("Let's try again, " + userName + "!");
-//
-//                return;
-//            }
-//        }
         for (String[] qa : questionAndAnswer) {
             String question = qa[0];
             String correctAnswer = qa[1];
@@ -36,7 +21,8 @@ public class Engine {
             String userAnswer = scanner.nextLine();
 
             if (!userAnswer.equals(correctAnswer)) {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" +
+                        correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 return;
             }

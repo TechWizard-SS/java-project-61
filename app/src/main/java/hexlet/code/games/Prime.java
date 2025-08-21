@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.utils.Utils;
 
-import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Prime {
