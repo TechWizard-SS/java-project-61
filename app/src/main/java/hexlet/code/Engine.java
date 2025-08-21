@@ -21,8 +21,8 @@ public class Engine {
             String userAnswer = scanner.nextLine();
 
             if (!userAnswer.equals(correctAnswer)) {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" +
-                        correctAnswer + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 return;
             }
