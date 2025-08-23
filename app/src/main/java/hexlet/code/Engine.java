@@ -1,14 +1,9 @@
 package hexlet.code;
 
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.Scanner;
 
 public class Engine {
     public static final int ROUNDS_COUNT = 3;
-    private static final Logger LOG = LoggerFactory.getLogger(Engine.class);
 
     public static void run2(String description, String[][] questionAndAnswer, Scanner scanner) {
         System.out.println("Welcome to the Brain Games!");

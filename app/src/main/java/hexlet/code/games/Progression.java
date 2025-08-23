@@ -31,8 +31,8 @@ public class Progression {
     }
 
     private static String[] generateProgression(int start, int step) {
-        final int PROGRESSION_LENGTH = 10;
-        String[] progression = new String[PROGRESSION_LENGTH];
+        int progressionLength = 10;
+        String[] progression = new String[progressionLength];
         for (int i = 0; i < progression.length; i++) {
             progression[i] = String.valueOf(start + i * step);
         }

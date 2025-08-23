@@ -40,9 +40,9 @@ public class Prime {
         }
 
         // Проверяем только нечётные делители до √n
-        final int PRIME_CHECK_START = 3;
-        final int PRIME_CHECK_STEP = 2;
-        for (int i = PRIME_CHECK_START; i * i <= num; i += PRIME_CHECK_STEP) {
+        int primeCheckStart = 3;
+        int primeCheckStep = 2;
+        for (int i = primeCheckStart; i * i <= num; i += primeCheckStep) {
             if (num % i == 0) {
                 return false;
             }
