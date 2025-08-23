@@ -7,11 +7,10 @@ import java.util.Scanner;
 
 public class Prime {
     private static final int MAX_VALUE = 100;
-    private static final int PRIME_CHECK_START = 3;
-    private static final int PRIME_CHECK_STEP = 2;
 
 
-    public static void game5(Scanner scanner, String userName) {
+
+    public static void game5(Scanner scanner) {
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
@@ -25,7 +24,7 @@ public class Prime {
             questionAndAnswer[i][1] = answer ? "yes" : "no";
         }
 
-        Engine.run2(description, questionAndAnswer, userName, scanner);
+        Engine.run2(description, questionAndAnswer, scanner);
     }
 
     public static boolean isPrime(int num) {
@@ -39,7 +38,10 @@ public class Prime {
         if (num % 2 == 0) {
             return false;
         }
+
         // Проверяем только нечётные делители до √n
+        final int PRIME_CHECK_START = 3;
+        final int PRIME_CHECK_STEP = 2;
         for (int i = PRIME_CHECK_START; i * i <= num; i += PRIME_CHECK_STEP) {
             if (num % i == 0) {
                 return false;

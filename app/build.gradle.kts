@@ -19,11 +19,6 @@ tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
 
-dependencies {
-    implementation("org.slf4j:slf4j-api:1.7.32")
-    implementation("ch.qos.logback:logback-classic:1.2.6")
-}
-
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(21))

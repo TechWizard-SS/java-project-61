@@ -6,13 +6,9 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.Scanner;
 
 public class App {
-    static final Logger LOG = LoggerFactory.getLogger(App.class);
     private static final int GREET = 1;
     private static final int EVEN = 2;
     private static final int CALC = 3;
@@ -25,7 +21,7 @@ public class App {
     public static void main(String[] args) {
 
 
-        LOG.info("""
+        System.out.println("""
                 Please enter the game number and press Enter.
                 1 - Greet
                 2 - Even
@@ -36,56 +32,38 @@ public class App {
                 0 - Exit""");
 
         Scanner sc = new Scanner(System.in);
-        LOG.info("Your choice: ");
+        System.out.println("Your choice: ");
         int choice = sc.nextInt();
         sc.nextLine();
 
         switch (choice) {
             case EXIT:
                 break;
+
             case GREET:
                 Cli.greeting(sc);
                 break;
+
             case EVEN:
-                System.out.println("Welcome to the Brain Games!");
-                System.out.print("May I have your name? ");
-                String userName1 = sc.nextLine();
-                System.out.println("Hello, " + userName1 + "!");
-
-                CheckingForParity.game1(sc, userName1);
+                CheckingForParity.game1(sc);
                 break;
+
             case CALC:
-                System.out.println("Welcome to the Brain Games!");
-                System.out.print("May I have your name? ");
-                String userName2 = sc.nextLine();
-                System.out.println("Hello, " + userName2 + "!");
-
-                Calculator.game2(sc, userName2);
+                Calculator.game2(sc);
                 break;
+
             case GCD_COUNT:
-                System.out.println("Welcome to the Brain Games!");
-                System.out.print("May I have your name? ");
-                String userName3 = sc.nextLine();
-                System.out.println("Hello, " + userName3 + "!");
-
-                GCD.game3(sc, userName3);
+                GCD.game3(sc);
                 break;
+
             case PROGRESSION:
-                System.out.println("Welcome to the Brain Games!");
-                System.out.print("May I have your name? ");
-                String userName4 = sc.nextLine();
-                System.out.println("Hello, " + userName4 + "!");
-
-                Progression.game4(sc, userName4);
+                Progression.game4(sc);
                 break;
+
             case PRIME:
-                System.out.println("Welcome to the Brain Games!");
-                System.out.print("May I have your name? ");
-                String userName5 = sc.nextLine();
-                System.out.println("Hello, " + userName5 + "!");
-
-                Prime.game5(sc, userName5);
+                Prime.game5(sc);
                 break;
+
             default:
                 throw new RuntimeException("Unknown input: " + choice);
         }

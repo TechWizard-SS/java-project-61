@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class CheckingForParity {
     private static final int MAX_VALUE = 100;
 
-    public static void game1(Scanner scanner, String userName) {
+    public static void game1(Scanner scanner) {
         String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
@@ -21,6 +21,6 @@ public class CheckingForParity {
             questionAndAnswer[i][0] = question;
             questionAndAnswer[i][1] = answer;
         }
-        Engine.run2(description, questionAndAnswer, userName, scanner);
+        Engine.run2(description, questionAndAnswer, scanner);
     }
 }

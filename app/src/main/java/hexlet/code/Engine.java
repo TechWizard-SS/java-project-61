@@ -10,14 +10,20 @@ public class Engine {
     public static final int ROUNDS_COUNT = 3;
     private static final Logger LOG = LoggerFactory.getLogger(Engine.class);
 
-    public static void run2(String description, String[][] questionAndAnswer, String userName, Scanner scanner) {
-        LOG.info(description);
+    public static void run2(String description, String[][] questionAndAnswer, Scanner scanner) {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = scanner.nextLine();
+        System.out.println("Hello, " + userName + "!");
+
+
+        System.out.println(description);
 
         for (String[] qa : questionAndAnswer) {
             String question = qa[0];
             String correctAnswer = qa[1];
 
-            LOG.info("Question: {}", question);
+            System.out.println("Question: " + question);
             String userAnswer = scanner.nextLine();
 
             if (!userAnswer.equals(correctAnswer)) {
@@ -26,9 +32,9 @@ public class Engine {
                 System.out.println("Let's try again, " + userName + "!");
                 return;
             }
-            LOG.info("Correct!");
+            System.out.println("Correct!");
         }
 
-        LOG.info("Congratulations, {}!", userName);
+        System.out.println("Congratulations, " + userName + "!");
     }
 }

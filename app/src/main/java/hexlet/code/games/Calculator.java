@@ -3,16 +3,14 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.utils.Utils;
 
-import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Calculator {
 
-    private static final SecureRandom RAND = new SecureRandom();
     private static final char[] SIGNS = {'+', '-', '*'};
     private static final int MAX_VALUE = 30;
 
-    public static void game2(Scanner scanner, String userName) {
+    public static void game2(Scanner scanner) {
         String description = "What is the result of the expression?";
         String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
@@ -29,7 +27,7 @@ public class Calculator {
             questionAndAnswer[i][1] = String.valueOf(result);        // правильный ответ
         }
 
-        Engine.run2(description, questionAndAnswer, userName, scanner);
+        Engine.run2(description, questionAndAnswer, scanner);
     }
 
     private static int calculateExpression(int firstOperand, int secondOperand, char sign) {

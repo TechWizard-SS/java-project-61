@@ -6,11 +6,10 @@ import hexlet.code.utils.Utils;
 import java.util.Scanner;
 
 public class Progression {
-    private static final int PROGRESSION_LENGTH = 10;
     private static final int MAX_STEP_VALUE = 10;
     private static final int MAX_START_VALUE = 100;
 
-    public static void game4(Scanner scanner, String userName) {
+    public static void game4(Scanner scanner) {
         String description = "What number is missing in the progression?";
         String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
@@ -28,10 +27,11 @@ public class Progression {
             questionAndAnswer[i][1] = answer;
         }
 
-        Engine.run2(description, questionAndAnswer, userName, scanner);
+        Engine.run2(description, questionAndAnswer, scanner);
     }
 
     private static String[] generateProgression(int start, int step) {
+        final int PROGRESSION_LENGTH = 10;
         String[] progression = new String[PROGRESSION_LENGTH];
         for (int i = 0; i < progression.length; i++) {
             progression[i] = String.valueOf(start + i * step);
